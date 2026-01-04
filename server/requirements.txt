@@ -1,0 +1,10 @@
+# backend/requirements.txt
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.11
+python-dotenv==1.0.0
+pydantic==2.12.5
+pydantic-settings==2.1.0
+aiofiles==23.2.1
+zeroconf==0.148.0
