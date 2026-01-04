@@ -1,0 +1,56 @@
+{
+  "name": "sync-desktop",
+  "version": "1.0.0",
+  "description": "Desktop app for sync",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "author": "dev",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run react\" \"npm run electron\"",
+    "react": "react-scripts start",
+    "build": "react-scripts build",
+    "electron": "wait-on http://localhost:3000 && electron .",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.292.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.0.1",
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16"
+  },
+  "build": {
+    "appId": "com.sync.desktop",
+    "productName": "Sync Desktop",
+    "files": [
+      "build/**/*",
+      "public/electron.js",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
